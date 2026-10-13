@@ -56,9 +56,7 @@ public class Main {
                         System.out.println("Não há tarefas para editar.");
                         break;
                     }
-                    System.out.print("Informe o ID da tarefa que deseja editar: ");
-                    int idEditar = entrada.nextInt();
-                    entrada.nextLine();
+                    int idEditar = lerInteiro(entrada, "Informe o ID da tarefa que deseja editar: ");
 
                     Tarefa tarefaEditar = buscarPorId(tarefas, idEditar);
 
@@ -153,5 +151,19 @@ public class Main {
             }
         }
         return null;
+    }
+
+    public static int lerInteiro(Scanner entrada, String pergunta) {
+        while (true) {
+            System.out.print(pergunta);
+            try {
+                int numero = entrada.nextInt();
+                entrada.nextLine();
+                return numero;
+            } catch (InputMismatchException e) {
+                System.out.println("Escolha um número");
+                entrada.nextLine();
+            }
+        }
     }
 }
