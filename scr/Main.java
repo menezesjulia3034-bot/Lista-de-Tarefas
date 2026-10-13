@@ -1,5 +1,6 @@
 package scr;
 
+import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class Main {
 
         ArrayList<Tarefa> tarefas = new ArrayList<>();
         Scanner entrada = new Scanner(System.in);
-        int opcao;
+        int opcao = 0;
 
         do {
             System.out.println("\n--- MENU DE TAREFAS ---");
@@ -19,8 +20,13 @@ public class Main {
             System.out.println("5 - Mudar status da tarefa");
             System.out.println("6 - Sair");
             System.out.print("Escolha: ");
-            opcao = entrada.nextInt();
-
+            try {
+                opcao = entrada.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("escolha um número");
+                entrada.nextLine();
+                continue;
+            }
             switch (opcao) {
 
                 case 1:
