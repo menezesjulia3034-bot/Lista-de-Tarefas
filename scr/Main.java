@@ -75,13 +75,7 @@ public class Main {
                     System.out.print("Informe o ID da tarefa que deseja remover: ");
                     int idRemover = entrada.nextInt();
 
-                    Tarefa tarefaRemover = null;
-                    for (Tarefa t : tarefas) {
-                        if (t.getId() == idRemover) {
-                            tarefaRemover = t;
-                            break;
-                        }
-                    }
+                    Tarefa tarefaRemover = buscarPorId(tarefas, idRemover);
 
                     if (tarefaRemover != null) {
                         tarefas.remove(tarefaRemover);
