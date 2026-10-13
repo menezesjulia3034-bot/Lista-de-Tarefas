@@ -93,13 +93,7 @@ public class Main {
                     System.out.print("Informe o ID da tarefa: ");
                     int idStatus = entrada.nextInt();
 
-                    Tarefa tarefaStatus = null;
-                    for (Tarefa t : tarefas) {
-                        if (t.getId() == idStatus) {
-                            tarefaStatus = t;
-                            break;
-                        }
-                    }
+                    Tarefa tarefaStatus = buscarPorId(tarefas, idStatus);
 
                     if (tarefaStatus != null) {
                         System.out.println("\nEscolha o novo status:");
