@@ -54,13 +54,7 @@ public class Main {
                     int idEditar = entrada.nextInt();
                     entrada.nextLine();
 
-                    Tarefa tarefaEditar = null;
-                    for (Tarefa t : tarefas) {
-                        if (t.getId() == idEditar) {
-                            tarefaEditar = t;
-                            break;
-                        }
-                    }
+                    Tarefa tarefaEditar = buscarPorId(tarefas, idEditar);
 
                     if (tarefaEditar != null) {
                         System.out.print("Digite o novo título: ");
@@ -155,5 +149,15 @@ public class Main {
         } while (opcao != 6);
 
         entrada.close();
+    }
+
+    // Procura uma tarefa pelo id. Devolve a tarefa encontrada ou null.
+    public static Tarefa buscarPorId(ArrayList<Tarefa> tarefas, int id) {
+        for (Tarefa t : tarefas) {
+            if (t.getId() == id) {
+                return t;
+            }
+        }
+        return null;
     }
 }
