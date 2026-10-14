@@ -76,8 +76,7 @@ public class Main {
                         System.out.println("Não há tarefas para remover.");
                         break;
                     }
-                    System.out.print("Informe o ID da tarefa que deseja remover: ");
-                    int idRemover = entrada.nextInt();
+                    int idRemover = lerInteiro(entrada, "Informe o ID da tarefa que deseja remover: ");
 
                     Tarefa tarefaRemover = buscarPorId(tarefas, idRemover);
 
@@ -94,8 +93,7 @@ public class Main {
                         System.out.println("Não há tarefas para alterar o status.");
                         break;
                     }
-                    System.out.print("Informe o ID da tarefa: ");
-                    int idStatus = entrada.nextInt();
+                    int idStatus = lerInteiro(entrada, "Informe o ID da tarefa: ");
 
                     Tarefa tarefaStatus = buscarPorId(tarefas, idStatus);
 
