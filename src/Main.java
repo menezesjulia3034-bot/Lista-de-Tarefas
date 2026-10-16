@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 import java.util.InputMismatchException;
 import java.util.ArrayList;

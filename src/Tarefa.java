@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 public class Tarefa {
     private static int proximoId = 1; //contador, um só para todas as tarefas

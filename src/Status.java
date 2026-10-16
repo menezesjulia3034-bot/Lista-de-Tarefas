@@ -1,4 +1,4 @@
-package scr;
+package src;
 
 public enum Status {
    PENDENTE("🚧"), EM_ANDAMENTO ("⏳"), CONCLUIDA ("✅");
