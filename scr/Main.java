@@ -19,18 +19,13 @@ public class Main {
             System.out.println("4 - Remover tarefa");
             System.out.println("5 - Mudar status da tarefa");
             System.out.println("6 - Sair");
-            System.out.print("Escolha: ");
-            try {
-                opcao = entrada.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("escolha um número");
-                entrada.nextLine();
-                continue;
-            }
+
+            opcao = lerInteiro(entrada, "Escolha uma opção: ");
+
             switch (opcao) {
 
                 case 1:
-                    entrada.nextLine(); // consome o Enter que sobrou do nextInt()
+
                     System.out.print("Informe o título da tarefa: ");
                     String titulo = entrada.nextLine();
                     System.out.print("Informe a descrição da tarefa: ");
